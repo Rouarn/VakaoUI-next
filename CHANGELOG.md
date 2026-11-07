@@ -1,6 +1,6 @@
 # @vakao/ui
 
-## 0.2.0
+## 0.1.0
 
 ### Minor Changes
 
@@ -14,11 +14,9 @@
   - 按钮禁用态由 `opacity: .5` 改为中性填充 + 禁用文字色；焦点环统一为 2px 实色。
   - 文档站重写导航、侧边栏、正文排版、示例容器（预览 + 代码）、提示块、表格、代码高亮与上下页；示例站三个场景页重做为真实产品界面。
 
-## 0.1.0
+### 初始版本能力
 
-### Minor Changes
-
-- 首个公开版本 0.1.0。
+- 首个公开版本包含：
   
   - 28 个组件导出：ConfigProvider、Button、Grid、Form / FormItem、Input、InputNumber、Select、Switch、Checkbox、Radio / RadioGroup、Slider、Alert、Progress、Spin、Skeleton、Empty、Modal、Popover、Popconfirm、Dropdown、Tabs、Menu、Pagination、Table
   - `--vk-*` 令牌体系与亮 / 暗 / auto 主题，ConfigProvider 支持 themeOverrides 与 locale

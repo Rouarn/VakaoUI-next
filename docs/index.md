@@ -62,7 +62,7 @@ pageClass: page-home
     </div>
     <a class="vk-section__link" href="/design/tokens">取色理由 →</a>
   </div>
-  <SwatchGrid label="品牌色板（含 0.2.0 新增的朱砂强调色）" />
+  <SwatchGrid label="品牌色板（含朱砂强调色）" />
 </section>
 
 <div class="vk-install-block">
@@ -85,7 +85,7 @@ createApp(App).use(VaKaoUI).mount('#app')
 组件通过 `VkConfigProvider` 提供主题、尺寸与语言；不包裹时使用默认令牌，仍然可用。
 需要换肤时只覆盖令牌即可，不需要改组件样式。
 
-::: tip 从 0.2.0 开始
+::: tip 从 0.1.0 开始
 强调色由低饱和蓝绿改为朱砂 `#C43A21`，字号、间距、圆角与阴影同步重定。新项目直接按本版本接入即可。
 :::
 

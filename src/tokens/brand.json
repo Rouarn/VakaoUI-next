@@ -1,5 +1,5 @@
 {
-  "$source": "VaKao-品牌视觉资源/tokens.json + docs/DESIGN-TOKENS.md（0.2.0 起强调色改为朱砂）",
+  "$source": "VaKao-品牌视觉资源/tokens.json + docs/DESIGN-TOKENS.md（强调色为朱砂）",
   "color": {
     "paper": "#F3F1EC",
     "raised": "#FAF9F5",

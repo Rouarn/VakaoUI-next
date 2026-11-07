@@ -4,7 +4,7 @@ VaKao 团队的 Vue 3 组件库。基于纸面 / 墨色 / 四芒星四色的品�
 
 ## 状态
 
-`0.2.0` 已发布，28 个组件入口可用。视觉系统在这一版整体重做（强调色改为朱砂、重定字号 / 间距 / 圆角 / 边框），变更说明见 [视觉变更说明](VISUAL-REVISION.md)。覆盖：
+`0.1.0` 已发布，28 个组件入口可用。视觉系统在这一版整体重做（强调色改为朱砂、重定字号 / 间距 / 圆角 / 边框），变更说明见 [视觉变更说明](VISUAL-REVISION.md)。覆盖：
 
 - **基础**：ConfigProvider、Button、Grid（Row / Col / Space）
 - **表单**：Form / FormItem、Input、InputNumber、Select、Switch、Checkbox、Radio / RadioGroup、Slider
