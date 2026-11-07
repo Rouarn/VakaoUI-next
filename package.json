@@ -44,7 +44,7 @@
     "**/*.css"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "pnpm docs:dev",
     "build": "vite build && node scripts/build-styles.mjs",
     "typecheck": "vue-tsc --noEmit -p tsconfig.json",
     "lint": "eslint .",

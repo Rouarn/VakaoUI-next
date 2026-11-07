@@ -19,7 +19,7 @@
 
 | 命令                                | 用途                                                 |
 | ----------------------------------- | ---------------------------------------------------- |
-| `pnpm dev`                          | 启动 playground                                      |
+| `pnpm dev`                          | 启动文档站开发服务（等同 `pnpm docs:dev`）           |
 | `pnpm lint` / `pnpm lint:fix`       | 代码检查                                             |
 | `pnpm format` / `pnpm format:check` | 格式化                                               |
 | `pnpm typecheck`                    | `vue-tsc --noEmit`                                   |
@@ -44,7 +44,6 @@ src/
 ├── resolver.ts             unplugin-vue-components 解析器
 └── index.ts                包入口与 Vue 插件
 tests/                      单元测试与 SSR 测试
-playground/                 本地交互预览
 docs/                       开发流程与令牌文档
 scripts/                    构建期脚本（主题 CSS、样式汇总）
 ```
@@ -235,4 +234,4 @@ components/<name>/
 | T1   | DatePicker/TimePicker、Upload、Rate、Collapse、Breadcrumb、Steps、List、Descriptions、Timeline、Result、Transfer、AutoComplete、Cascader、TreeSelect、Drawer                                       |
 | T2   | Calendar、Carousel、ColorPicker、QRCode、Watermark、Scrollbar、Affix、BackTop、Anchor、Split、Flex、Code、Statistic、FloatButton                                                                   |
 
-每个 T0 组件合并前补齐：实现、样式、测试、SSR、playground 示例、changeset。
+每个 T0 组件合并前补齐：实现、样式、测试、SSR、docs 示例、changeset。

@@ -9,5 +9,5 @@
     "types": ["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
-  "exclude": ["dist", "node_modules", "tests", "playground"]
+  "exclude": ["dist", "node_modules", "tests"]
 }

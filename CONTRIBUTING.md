@@ -7,8 +7,7 @@
 
 ```bash
 pnpm install
-pnpm dev          # 示例 playground
-pnpm docs:dev     # 文档站 + 示例站
+pnpm dev          # 启动文档站开发服务（等同 pnpm docs:dev）
 ```
 
 ## 提交前

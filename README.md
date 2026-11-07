@@ -71,7 +71,7 @@ Components({ resolvers: [VakaoUiResolver()] })
 ```bash
 corepack enable
 pnpm install
-pnpm dev          # playground
+pnpm dev          # 启动文档站开发服务（等同 pnpm docs:dev）
 pnpm check        # lint + format + typecheck + test + build + size
 pnpm test:coverage
 pnpm docs:build
