@@ -1,0 +1,6 @@
+export { default as VkLayout } from './src/Layout.vue'
+export { default as VkLayoutHeader } from './src/LayoutHeader.vue'
+export { default as VkLayoutSider } from './src/LayoutSider.vue'
+export { default as VkLayoutContent } from './src/LayoutContent.vue'
+export { default as VkLayoutFooter } from './src/LayoutFooter.vue'
+export type { LayoutProps, LayoutSectionSlots, LayoutSiderProps, LayoutSlots } from './src/types'

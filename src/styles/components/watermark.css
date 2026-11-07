@@ -1,0 +1,16 @@
+.vk-watermark {
+  box-sizing: border-box;
+  position: relative;
+  font-family: var(--vk-font-family);
+}
+
+.vk-watermark__layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+  pointer-events: none;
+}
+
+.vk-watermark--fullscreen .vk-watermark__layer {
+  position: fixed;
+}

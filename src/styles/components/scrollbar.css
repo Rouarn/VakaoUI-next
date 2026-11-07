@@ -1,0 +1,122 @@
+.vk-scrollbar {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.vk-scrollbar__container {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.vk-scrollbar__container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.vk-scrollbar__container:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: calc(var(--vk-focus-ring-offset) * -1);
+}
+
+.vk-scrollbar--native .vk-scrollbar__container {
+  scrollbar-width: auto;
+  -ms-overflow-style: auto;
+}
+
+.vk-scrollbar--native .vk-scrollbar__container::-webkit-scrollbar {
+  width: auto;
+  height: auto;
+}
+
+.vk-scrollbar__content {
+  box-sizing: border-box;
+}
+
+.vk-scrollbar__bar {
+  position: absolute;
+  z-index: 1;
+  border-radius: var(--vk-radius-full);
+  opacity: 0;
+  transition: opacity var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-scrollbar--active .vk-scrollbar__bar,
+.vk-scrollbar--always .vk-scrollbar__bar {
+  opacity: 1;
+}
+
+.vk-scrollbar__bar--vertical {
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  width: 6px;
+}
+
+.vk-scrollbar__bar--horizontal {
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  height: 6px;
+}
+
+.vk-scrollbar--small .vk-scrollbar__bar--vertical {
+  width: 4px;
+}
+
+.vk-scrollbar--small .vk-scrollbar__bar--horizontal {
+  height: 4px;
+}
+
+.vk-scrollbar--large .vk-scrollbar__bar--vertical {
+  width: 8px;
+}
+
+.vk-scrollbar--large .vk-scrollbar__bar--horizontal {
+  height: 8px;
+}
+
+.vk-scrollbar__thumb {
+  position: absolute;
+  border-radius: var(--vk-radius-full);
+  background: var(--vk-text-color-3);
+  opacity: 0.45;
+  cursor: pointer;
+  transition:
+    opacity var(--vk-motion-fast) var(--vk-easing-standard),
+    background-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-scrollbar__thumb:hover,
+.vk-scrollbar__bar:hover .vk-scrollbar__thumb {
+  background: var(--vk-text-color-2);
+  opacity: 0.75;
+}
+
+.vk-scrollbar__thumb--dragging {
+  opacity: 0.9;
+}
+
+.vk-scrollbar__bar--vertical .vk-scrollbar__thumb {
+  right: 0;
+  left: 0;
+}
+
+.vk-scrollbar__bar--horizontal .vk-scrollbar__thumb {
+  top: 0;
+  bottom: 0;
+}
+
+.vk-scrollbar--native .vk-scrollbar__bar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-scrollbar__bar,
+  .vk-scrollbar__thumb {
+    transition: none;
+  }
+}

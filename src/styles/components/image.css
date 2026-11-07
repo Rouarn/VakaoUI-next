@@ -1,0 +1,182 @@
+.vk-image {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--vk-radius-medium);
+  background: var(--vk-fill-color);
+  line-height: 0;
+}
+
+.vk-image--loading,
+.vk-image--error {
+  min-height: var(--vk-space-8);
+}
+
+.vk-image--round {
+  border-radius: var(--vk-radius-full);
+}
+
+.vk-image--preview {
+  cursor: zoom-in;
+}
+
+.vk-image--preview:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: var(--vk-focus-ring-offset);
+}
+
+.vk-image__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vk-image__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--vk-fill-color);
+}
+
+.vk-image__spinner {
+  width: var(--vk-space-5);
+  height: var(--vk-space-5);
+  border: var(--vk-border-width-strong) solid var(--vk-border-color);
+  border-top-color: var(--vk-color-primary);
+  border-radius: var(--vk-radius-full);
+  animation: vk-image-spin 800ms linear infinite;
+}
+
+.vk-image__error {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vk-space-2);
+  padding: var(--vk-space-3);
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  line-height: var(--vk-line-height-snug);
+  text-align: center;
+}
+
+.vk-image__error-text {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vk-image-preview {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--vk-space-8) var(--vk-space-4) var(--vk-space-4);
+  font-family: var(--vk-font-family);
+  outline: none;
+}
+
+.vk-image-preview__mask {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--vk-color-mask);
+}
+
+.vk-image-preview__toolbar {
+  position: absolute;
+  top: var(--vk-space-4);
+  left: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-1);
+  padding: var(--vk-space-1);
+  border-radius: var(--vk-radius-full);
+  background: var(--vk-color-modal);
+  box-shadow: var(--vk-shadow-2);
+  transform: translateX(-50%);
+}
+
+.vk-image-preview__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--vk-space-6);
+  min-height: var(--vk-space-6);
+  padding: 0;
+  border: 0;
+  border-radius: var(--vk-radius-full);
+  background: transparent;
+  color: var(--vk-text-color-2);
+  cursor: pointer;
+  transition:
+    background-color var(--vk-motion-fast) var(--vk-easing-standard),
+    color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-image-preview__button:hover {
+  background: var(--vk-fill-color-hover);
+  color: var(--vk-text-color-1);
+}
+
+.vk-image-preview__button:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: 1px;
+}
+
+.vk-image-preview__img {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: var(--vk-radius-medium);
+  box-shadow: var(--vk-shadow-2);
+  object-fit: contain;
+  transform: scale(var(--vk-image-zoom, 1));
+  transform-origin: center center;
+  transition: transform var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-image-preview--fade-enter-active,
+.vk-image-preview--fade-leave-active {
+  transition: opacity var(--vk-motion-base) var(--vk-easing-standard);
+}
+
+.vk-image-preview--fade-enter-from,
+.vk-image-preview--fade-leave-to {
+  opacity: 0;
+}
+
+.vk-image-preview--fade-enter-from .vk-image-preview__img,
+.vk-image-preview--fade-leave-to .vk-image-preview__img {
+  transform: scale(0.92);
+}
+
+@keyframes vk-image-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-image__spinner {
+    animation: none;
+  }
+
+  .vk-image-preview--fade-enter-active,
+  .vk-image-preview--fade-leave-active,
+  .vk-image-preview__img {
+    transition: none;
+  }
+}

@@ -1,0 +1,102 @@
+.vk-badge {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  font-family: var(--vk-font-family);
+  vertical-align: middle;
+}
+
+.vk-badge--standalone {
+  display: inline-flex;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.vk-badge__badge {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--vk-radius-full);
+  background: var(--vk-color-primary);
+  color: var(--vk-text-color-on-primary);
+  font-size: 11px;
+  font-weight: var(--vk-font-weight-strong);
+  line-height: 1;
+  white-space: nowrap;
+  transform: translate(50%, -50%);
+  box-shadow: 0 0 0 2px var(--vk-color-card);
+}
+
+.vk-badge--standalone .vk-badge__badge {
+  position: static;
+  transform: none;
+}
+
+.vk-badge--dot .vk-badge__badge {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  padding: 0;
+}
+
+.vk-badge--standalone.vk-badge--dot {
+  min-width: 8px;
+  min-height: 8px;
+}
+
+.vk-badge__badge.vk-badge--default {
+  background: var(--vk-color-hover);
+  color: var(--vk-text-color-1);
+}
+
+.vk-badge__badge.vk-badge--info {
+  background: var(--vk-color-info);
+  color: var(--vk-text-color-1);
+}
+
+.vk-badge__badge.vk-badge--success {
+  background: var(--vk-color-success);
+  color: var(--vk-text-color-1);
+}
+
+.vk-badge__badge.vk-badge--warning {
+  background: var(--vk-color-warning);
+  color: var(--vk-text-color-1);
+}
+
+.vk-badge__badge.vk-badge--error {
+  background: var(--vk-color-error);
+  color: var(--vk-text-color-on-primary);
+}
+
+.vk-badge--processing .vk-badge__badge {
+  animation: vk-badge-pulse 1.8s var(--vk-easing-standard) infinite;
+}
+
+@keyframes vk-badge-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 2px var(--vk-color-card),
+      0 0 0 2px var(--vk-color-primary-suppl);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 2px var(--vk-color-card),
+      0 0 0 6px transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-badge--processing .vk-badge__badge {
+    animation: none;
+  }
+}

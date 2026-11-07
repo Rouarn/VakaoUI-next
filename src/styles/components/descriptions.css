@@ -1,0 +1,96 @@
+.vk-descriptions {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(var(--vk-descriptions-columns, 3), minmax(0, 1fr));
+  gap: var(--vk-space-4);
+  margin: 0;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  line-height: var(--vk-line-height);
+}
+
+.vk-descriptions__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-space-1);
+  min-width: 0;
+}
+
+.vk-descriptions--label-left .vk-descriptions__item {
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--vk-space-3);
+}
+
+.vk-descriptions__label {
+  margin: 0;
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  white-space: nowrap;
+}
+
+.vk-descriptions--label-left .vk-descriptions__label {
+  flex: none;
+}
+
+.vk-descriptions__value {
+  margin: 0;
+  color: var(--vk-text-color-1);
+  overflow-wrap: anywhere;
+}
+
+.vk-descriptions--bordered {
+  gap: 1px;
+  overflow: hidden;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-medium);
+  background: var(--vk-border-color);
+}
+
+.vk-descriptions--bordered .vk-descriptions__item {
+  gap: 0;
+  background: var(--vk-color-card);
+}
+
+.vk-descriptions--bordered .vk-descriptions__label {
+  padding: var(--vk-space-2) var(--vk-space-3);
+  background: var(--vk-fill-color);
+  white-space: normal;
+}
+
+.vk-descriptions--bordered .vk-descriptions__value {
+  padding: var(--vk-space-2) var(--vk-space-3);
+}
+
+.vk-descriptions--small {
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-descriptions--small .vk-descriptions__label {
+  font-size: var(--vk-font-size-caption);
+}
+
+.vk-descriptions--small.vk-descriptions--bordered .vk-descriptions__label,
+.vk-descriptions--small.vk-descriptions--bordered .vk-descriptions__value {
+  padding: 6px var(--vk-space-2);
+}
+
+.vk-descriptions--large {
+  font-size: var(--vk-font-size-large);
+}
+
+.vk-descriptions--large.vk-descriptions--bordered .vk-descriptions__label,
+.vk-descriptions--large.vk-descriptions--bordered .vk-descriptions__value {
+  padding: var(--vk-space-3) var(--vk-space-4);
+}
+
+@media (max-width: 720px) {
+  .vk-descriptions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vk-descriptions__item {
+    grid-column: span 1 !important;
+  }
+}

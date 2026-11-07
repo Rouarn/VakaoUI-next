@@ -1,0 +1,114 @@
+.vk-list {
+  box-sizing: border-box;
+  border-radius: var(--vk-radius-large);
+  background: var(--vk-color-card);
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  line-height: var(--vk-line-height);
+}
+
+.vk-list--bordered {
+  overflow: hidden;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-large);
+}
+
+.vk-list__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--vk-space-6) var(--vk-space-4);
+}
+
+.vk-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vk-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--vk-space-3);
+  padding: var(--vk-space-4) var(--vk-space-5);
+}
+
+.vk-list--small .vk-list__item {
+  padding: var(--vk-space-3) var(--vk-space-4);
+}
+
+.vk-list--large .vk-list__item {
+  padding: var(--vk-space-5) var(--vk-space-6);
+}
+
+.vk-list--split .vk-list__item + .vk-list__item {
+  border-top: var(--vk-border-width) solid var(--vk-divider-color);
+}
+
+.vk-list--hoverable .vk-list__item {
+  transition: background-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-list--hoverable .vk-list__item:hover {
+  background: var(--vk-color-hover);
+}
+
+.vk-list__item--selected {
+  background: var(--vk-color-primary-soft);
+}
+
+.vk-list--hoverable .vk-list__item--selected:hover {
+  background: var(--vk-color-primary-soft);
+}
+
+.vk-list__avatar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.vk-list__main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.vk-list__title {
+  overflow: hidden;
+  color: var(--vk-text-color-1);
+  font-size: var(--vk-font-size-medium);
+  font-weight: var(--vk-font-weight-strong);
+  line-height: var(--vk-line-height);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vk-list__description {
+  display: -webkit-box;
+  margin-top: var(--vk-space-1);
+  overflow: hidden;
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  line-height: var(--vk-line-height);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.vk-list__extra {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--vk-space-2);
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  line-height: var(--vk-line-height);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-list--hoverable .vk-list__item {
+    transition: none;
+  }
+}

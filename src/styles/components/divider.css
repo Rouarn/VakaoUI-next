@@ -1,0 +1,52 @@
+.vk-divider--horizontal {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: var(--vk-space-4) 0;
+}
+
+.vk-divider__line {
+  flex: 1 1 0;
+  border-top: var(--vk-border-width) solid var(--vk-divider-color);
+}
+
+.vk-divider--dashed .vk-divider__line {
+  border-top-style: dashed;
+}
+
+.vk-divider__title {
+  flex: none;
+  padding: 0 var(--vk-space-3);
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-small);
+  font-weight: var(--vk-font-weight-strong);
+  white-space: nowrap;
+}
+
+.vk-divider--plain .vk-divider__title {
+  color: var(--vk-text-color-3);
+  font-weight: 400;
+}
+
+.vk-divider--left .vk-divider__line:first-child {
+  flex: 0 0 24px;
+}
+
+.vk-divider--right .vk-divider__line:last-child {
+  flex: 0 0 24px;
+}
+
+.vk-divider--vertical {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 1em;
+  margin: 0 var(--vk-space-2);
+  border-left: var(--vk-border-width) solid var(--vk-divider-color);
+  vertical-align: middle;
+}
+
+.vk-divider--vertical.vk-divider--dashed {
+  border-left-style: dashed;
+}

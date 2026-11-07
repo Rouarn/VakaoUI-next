@@ -1,0 +1,6 @@
+.vk-countdown {
+  box-sizing: border-box;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+  white-space: nowrap;
+}

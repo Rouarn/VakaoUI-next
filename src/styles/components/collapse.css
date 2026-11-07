@@ -1,0 +1,98 @@
+.vk-collapse {
+  box-sizing: border-box;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+}
+
+.vk-collapse--bordered {
+  overflow: hidden;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-medium);
+  background: var(--vk-color-card);
+}
+
+.vk-collapse-item + .vk-collapse-item {
+  border-top: var(--vk-border-width) solid var(--vk-divider-color);
+}
+
+.vk-collapse-item__header-row {
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  padding-right: var(--vk-space-4);
+}
+
+.vk-collapse-item__header {
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: var(--vk-space-2);
+  min-width: 0;
+  padding: var(--vk-space-3) var(--vk-space-4);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: var(--vk-line-height-snug);
+  text-align: start;
+  transition: background-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-collapse-item__header:hover:not(:disabled) {
+  background: var(--vk-fill-color-hover);
+}
+
+.vk-collapse-item__header:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: -2px;
+}
+
+.vk-collapse-item__header:disabled {
+  color: var(--vk-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.vk-collapse-item__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  color: var(--vk-text-color-3);
+  transition: transform var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-collapse-item--expanded .vk-collapse-item__icon {
+  transform: rotate(180deg);
+}
+
+.vk-collapse-item__title {
+  min-width: 0;
+  font-weight: var(--vk-font-weight-strong);
+}
+
+.vk-collapse-item__extra {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: var(--vk-space-2);
+}
+
+.vk-collapse-item__panel {
+  border-top: var(--vk-border-width) solid var(--vk-divider-color);
+}
+
+.vk-collapse-item__body {
+  padding: var(--vk-space-4);
+  color: var(--vk-text-color-2);
+  line-height: var(--vk-line-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-collapse-item__header,
+  .vk-collapse-item__icon {
+    transition: none;
+  }
+}

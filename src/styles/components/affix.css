@@ -1,0 +1,8 @@
+.vk-affix {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.vk-affix__content {
+  will-change: transform;
+}

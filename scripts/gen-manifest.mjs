@@ -16,6 +16,10 @@ const names = readdirSync(componentsDir, { withFileTypes: true })
       form: ['Form', 'FormItem'],
       radio: ['Radio', 'RadioGroup'],
       grid: ['Row', 'Col', 'Space'],
+      typography: ['Typography', 'Title', 'Text', 'Link'],
+      layout: ['Layout', 'LayoutHeader', 'LayoutSider', 'LayoutContent', 'LayoutFooter'],
+      breadcrumb: ['Breadcrumb', 'BreadcrumbItem'],
+      collapse: ['Collapse', 'CollapseItem'],
     }[dir]
     return (extra ?? [pascal(dir)]).map((name) => ({ name, dir }))
   })

@@ -1,0 +1,61 @@
+.vk-flex {
+  box-sizing: border-box;
+  display: flex;
+  font-family: var(--vk-font-family);
+}
+
+.vk-flex--inline {
+  display: inline-flex;
+}
+
+.vk-flex--vertical {
+  flex-direction: column;
+}
+
+.vk-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.vk-flex--justify-start {
+  justify-content: flex-start;
+}
+
+.vk-flex--justify-end {
+  justify-content: flex-end;
+}
+
+.vk-flex--justify-center {
+  justify-content: center;
+}
+
+.vk-flex--justify-space-between {
+  justify-content: space-between;
+}
+
+.vk-flex--justify-space-around {
+  justify-content: space-around;
+}
+
+.vk-flex--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.vk-flex--align-start {
+  align-items: flex-start;
+}
+
+.vk-flex--align-end {
+  align-items: flex-end;
+}
+
+.vk-flex--align-center {
+  align-items: center;
+}
+
+.vk-flex--align-stretch {
+  align-items: stretch;
+}
+
+.vk-flex--align-baseline {
+  align-items: baseline;
+}

@@ -43,6 +43,8 @@ const {
 })
 
 const value = computed(() => props.modelValue ?? '')
+const countClass = ns.e('count')
+const countText = computed(() => `${value.value.length}/${props.maxlength ?? ''}`)
 const isError = computed(() => props.status === 'error')
 
 const classes = computed(() => [
@@ -162,8 +164,6 @@ function clear(): void {
       <slot name="suffix" />
     </span>
 
-    <span v-if="showCount && maxlength" :class="ns.e('count')"
-      >{{ value.length }}/{{ maxlength }}</span
-    >
+    <span v-if="showCount && maxlength" :class="countClass">{{ countText }}</span>
   </div>
 </template>

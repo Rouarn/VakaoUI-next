@@ -1,0 +1,164 @@
+.vk-tree {
+  box-sizing: border-box;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  line-height: var(--vk-line-height-snug);
+}
+
+.vk-tree__node {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  min-height: 32px;
+  padding-right: var(--vk-space-2);
+  border-radius: var(--vk-radius-small);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-tree__node:hover {
+  background: var(--vk-fill-color-hover);
+}
+
+.vk-tree__node:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: -2px;
+}
+
+.vk-tree__node--selected {
+  background: var(--vk-color-primary-soft);
+  color: var(--vk-color-primary-soft-text);
+}
+
+.vk-tree__node--selected:hover {
+  background: var(--vk-color-primary-suppl);
+}
+
+.vk-tree__node--disabled {
+  color: var(--vk-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.vk-tree__node--disabled:hover {
+  background: transparent;
+}
+
+.vk-tree__arrow,
+.vk-tree__arrow-placeholder {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--vk-text-color-3);
+}
+
+.vk-tree__arrow {
+  border-radius: var(--vk-radius-small);
+  transition: transform var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-tree__arrow:hover {
+  color: var(--vk-text-color-1);
+}
+
+.vk-tree__arrow--expanded {
+  transform: rotate(90deg);
+}
+
+.vk-tree__checkbox {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-small);
+  background: var(--vk-color-card);
+  color: var(--vk-text-color-on-primary);
+  transition:
+    background-color var(--vk-motion-fast) var(--vk-easing-standard),
+    border-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-tree__node:hover .vk-tree__checkbox {
+  border-color: var(--vk-color-primary);
+}
+
+.vk-tree__checkbox--checked,
+.vk-tree__checkbox--half {
+  border-color: var(--vk-color-primary);
+  background: var(--vk-color-primary);
+}
+
+.vk-tree__checkbox--disabled {
+  border-color: var(--vk-border-color);
+  background: var(--vk-fill-color);
+  color: var(--vk-text-color-disabled);
+}
+
+.vk-tree__node:hover .vk-tree__checkbox--disabled {
+  border-color: var(--vk-border-color);
+}
+
+.vk-tree__dash {
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--vk-text-color-on-primary);
+}
+
+.vk-tree__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vk-tree__loading {
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  min-height: 28px;
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-tree__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--vk-radius-full);
+  animation: vk-tree-spin 0.9s linear infinite;
+}
+
+.vk-tree__empty {
+  padding: var(--vk-space-6) var(--vk-space-3);
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  text-align: center;
+}
+
+@keyframes vk-tree-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-tree__node,
+  .vk-tree__arrow,
+  .vk-tree__checkbox,
+  .vk-tree__spinner {
+    transition: none;
+    animation: none;
+  }
+}

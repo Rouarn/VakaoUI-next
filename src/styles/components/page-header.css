@@ -1,0 +1,87 @@
+.vk-page-header {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vk-space-2);
+  padding-bottom: var(--vk-space-4);
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  line-height: var(--vk-line-height);
+}
+
+.vk-page-header__breadcrumb {
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-small);
+  line-height: var(--vk-line-height-snug);
+}
+
+.vk-page-header__heading {
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  min-width: 0;
+}
+
+.vk-page-header__back {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--vk-space-6);
+  height: var(--vk-space-6);
+  margin-left: calc(var(--vk-space-1) * -1);
+  padding: 0;
+  border: 0;
+  border-radius: var(--vk-radius-full);
+  background: transparent;
+  color: var(--vk-text-color-2);
+  cursor: pointer;
+  transition:
+    background-color var(--vk-motion-fast) var(--vk-easing-standard),
+    color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-page-header__back:hover {
+  background: var(--vk-color-hover);
+  color: var(--vk-text-color-1);
+}
+
+.vk-page-header__back:focus-visible {
+  outline: var(--vk-focus-ring-width) solid var(--vk-color-primary);
+  outline-offset: var(--vk-focus-ring-offset);
+}
+
+.vk-page-header__title {
+  min-width: 0;
+  margin: 0;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family-display);
+  font-size: var(--vk-font-size-xl);
+  font-weight: var(--vk-font-weight-strong);
+  line-height: var(--vk-line-height-snug);
+}
+
+.vk-page-header__extra {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--vk-space-2);
+  margin-left: auto;
+}
+
+.vk-page-header__subtitle {
+  margin: 0;
+  color: var(--vk-text-color-3);
+  font-size: var(--vk-font-size-medium);
+  line-height: var(--vk-line-height);
+}
+
+.vk-page-header__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  margin-top: var(--vk-space-2);
+  padding-top: var(--vk-space-4);
+  border-top: var(--vk-border-width) solid var(--vk-divider-color);
+}
