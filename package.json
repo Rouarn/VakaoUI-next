@@ -58,6 +58,7 @@
     "api": "node scripts/gen-api.mjs",
     "docs:dev": "node scripts/build-styles.mjs && node scripts/gen-api.mjs && vitepress dev docs",
     "docs:build": "node scripts/build-styles.mjs && node scripts/gen-api.mjs && vitepress build docs",
+    "docs:build:preview": "VK_DOCS_BASE=/preview/ pnpm docs:build",
     "docs:preview": "vitepress preview docs",
     "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:run && pnpm build && pnpm size",
     "changeset": "changeset",

@@ -4,13 +4,14 @@ VaKao 团队的 Vue 3 组件库。基于纸面 / 墨色 / 四芒星四色的品�
 
 ## 状态
 
-`0.1.0` 已发布，28 个组件入口可用。视觉系统在这一版整体重做（强调色改为朱砂、重定字号 / 间距 / 圆角 / 边框），变更说明见 [视觉变更说明](VISUAL-REVISION.md)。覆盖：
+`0.1.0` 已发布，69 个组件入口可用。视觉系统在这一版整体重做（强调色改为朱砂、重定字号 / 间距 / 圆角 / 边框），变更说明见 [视觉变更说明](VISUAL-REVISION.md)。覆盖：
 
-- **基础**：ConfigProvider、Button、Grid（Row / Col / Space）
-- **表单**：Form / FormItem、Input、InputNumber、Select、Switch、Checkbox、Radio / RadioGroup、Slider
+- **基础**：ConfigProvider、Button、Typography、Divider、Card、Tag、Avatar、Badge、Grid（Row / Col / Space）
+- **布局与导航**：Layout（Header / Sider / Content / Footer）、Flex、Affix、Anchor、PageHeader、Breadcrumb、Collapse、BackTop、Scrollbar、Tabs、Menu、Pagination
+- **表单**：Form / FormItem、Input、InputNumber、Select、Cascader、Transfer、Upload、Switch、Checkbox、Radio / RadioGroup、Slider、Rate
 - **反馈**：Alert、Progress、Spin、Skeleton、Empty
-- **浮层**：Modal、Popover、Popconfirm、Dropdown
-- **导航与数据**：Tabs、Menu、Pagination、Table
+- **浮层**：Modal、Drawer、Popover、Popconfirm、Dropdown、Tooltip
+- **数据**：Table、Tree、List、Timeline、Statistic、Image、Watermark、Countdown、QrCode、Descriptions、Steps
 
 全部组件满足：只消费 `--vk-*` 令牌、无全局副作用、键盘与 ARIA 约定、单测、可交互示例与自动 API 表。完整完成度与已知限制见 [组件状态](docs/guide/components-status.md)。
 

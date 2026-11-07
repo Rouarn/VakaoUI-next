@@ -19,6 +19,13 @@
 - 首个公开版本包含：
   
   - 28 个组件导出：ConfigProvider、Button、Grid、Form / FormItem、Input、InputNumber、Select、Switch、Checkbox、Radio / RadioGroup、Slider、Alert、Progress、Spin、Skeleton、Empty、Modal、Popover、Popconfirm、Dropdown、Tabs、Menu、Pagination、Table
+  - 基础展示补齐：Typography（Typography / Title / Text / Link）、Divider、Card、Tag、Avatar，导出增至 36 个
+  - 体验组件补齐：Badge、Tooltip、Result、Descriptions、Steps，导出增至 41 个
+  - 布局与导航补齐：Layout 家族、Breadcrumb、Collapse、Rate、BackTop，导出增至 52 个
+  - 数据与浮层补齐：Flex、List、Timeline、Statistic、Drawer，导出增至 57 个
+  - 布局与媒体补齐：Affix、Anchor、PageHeader、Image、Watermark，导出增至 62 个
+  - 工具与媒体补齐：Scrollbar、Countdown、QrCode，导出增至 65 个
+  - 复杂交互补齐：Upload、Transfer、Tree、Cascader，导出增至 69 个
   - `--vk-*` 令牌体系与亮 / 暗 / auto 主题，ConfigProvider 支持 themeOverrides 与 locale
   - ESM-only 多入口产物、类型声明、单组件样式与 unplugin resolver
   - VitePress 文档站与示例站、自动 API 表
