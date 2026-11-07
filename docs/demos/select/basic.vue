@@ -14,19 +14,30 @@ const city = ref<string | number | null>('hangzhou')
 </script>
 
 <template>
-  <div class="field">
-    <VkSelect v-model="city" :options="options" clearable aria-label="城市" />
+  <div class="demo-stack">
+    <div class="field">
+      <VkSelect v-model="city" :options="options" clearable aria-label="城市" />
+    </div>
+    <p class="result">当前选择：{{ city ?? '未选择' }}</p>
   </div>
-  <p class="result">当前选择：{{ city ?? '未选择' }}</p>
 </template>
 
 <style scoped>
+.demo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+}
+
 .field {
-  max-width: 280px;
+  width: 280px;
+  max-width: 100%;
 }
 
 .result {
-  margin: 12px 0 0;
+  margin: 0;
   color: var(--vk-text-color-2);
   font-size: 13px;
 }

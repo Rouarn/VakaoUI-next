@@ -1,5 +1,4 @@
 .vk-dropdown {
-  position: relative;
   display: inline-flex;
   font-family: var(--vk-font-family);
 }
@@ -17,25 +16,15 @@
 }
 
 .vk-dropdown__panel {
-  position: absolute;
-  z-index: var(--vk-z-index-dropdown);
+  z-index: var(--vk-z-index-popup);
   box-sizing: border-box;
   min-width: 160px;
+  overflow: auto;
   padding: var(--vk-space-1);
   border: var(--vk-border-width) solid var(--vk-border-color);
   border-radius: var(--vk-radius-medium);
   background: var(--vk-color-modal);
   box-shadow: var(--vk-shadow-2);
-}
-
-.vk-dropdown--bottom {
-  top: calc(100% + 6px);
-  left: 0;
-}
-
-.vk-dropdown--top {
-  bottom: calc(100% + 6px);
-  left: 0;
 }
 
 .vk-dropdown__item {

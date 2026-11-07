@@ -163,6 +163,8 @@ components/<name>/
 
 发布目标是云效私有制品仓库。**registry 认证由开发者本机全局配置提供，仓库不保存任何凭据，也不需要在项目内配置 registry。**
 
+> `@vakao/ui` 目前固定 `0.1.0`，采用同版本覆盖发布：直接重复发布 `0.1.0` 即可覆盖制品，无需升版本号。
+
 1. 确认工作区干净，`main` 为最新。
 2. `pnpm check` 全部通过。
 3. `pnpm changeset` 记录变更；`pnpm version-packages` 定版本并提交。

@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
-import { trapFocus, useConfig, useLocale, useNamespace } from '@/core'
+import {
+  lockScroll,
+  trapFocus,
+  unlockScroll,
+  useConfig,
+  useLocale,
+  useNamespace,
+  usePopupContainer,
+} from '@/core'
 import type { ModalEmits, ModalProps, ModalSlots } from './types'
 
 let modalSeed = 0
@@ -33,27 +41,32 @@ defineSlots<ModalSlots>()
 const ns = useNamespace('modal')
 const config = useConfig()
 const locale = useLocale()
+const container = usePopupContainer()
 
 const dialogRef = ref<HTMLElement | null>(null)
 const titleId = nextTitleId()
 const rendered = ref(props.open)
 let previousActive: HTMLElement | null = null
-let previousOverflow = ''
+let locked = false
 
-const panelStyle = computed(() => ({
-  width: typeof props.width === 'number' ? `${props.width}px` : props.width,
+const rootStyle = computed(() => ({
   zIndex: String(props.zIndex ?? config.zIndex.value),
 }))
 
-function lockScroll(): void {
-  if (typeof document === 'undefined') return
-  previousOverflow = document.body.style.overflow
-  document.body.style.overflow = 'hidden'
+const dialogStyle = computed(() => ({
+  width: typeof props.width === 'number' ? `${props.width}px` : props.width,
+}))
+
+function lock(): void {
+  if (locked) return
+  locked = true
+  lockScroll()
 }
 
-function unlockScroll(): void {
-  if (typeof document === 'undefined') return
-  document.body.style.overflow = previousOverflow
+function unlock(): void {
+  if (!locked) return
+  locked = false
+  unlockScroll()
 }
 
 function close(source: 'mask' | 'button' | 'cancel' | 'ok'): void {
@@ -91,10 +104,10 @@ watch(
     if (open) {
       rendered.value = true
       previousActive = document.activeElement as HTMLElement | null
-      lockScroll()
+      lock()
       void nextTick(() => dialogRef.value?.focus())
     } else {
-      unlockScroll()
+      unlock()
       previousActive?.focus()
       previousActive = null
       if (props.destroyOnClose) rendered.value = false
@@ -104,18 +117,19 @@ watch(
 )
 
 onBeforeUnmount(() => {
-  unlockScroll()
+  unlock()
 })
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport :to="container">
     <Transition :name="ns.m('fade')">
-      <div v-if="open" :class="ns.b" :style="panelStyle">
+      <div v-if="open" :class="ns.b" :style="rootStyle">
         <div :class="ns.e('mask')" @click="onMask" />
         <div
           ref="dialogRef"
           :class="ns.e('dialog')"
+          :style="dialogStyle"
           role="dialog"
           aria-modal="true"
           :aria-labelledby="title ? titleId : undefined"

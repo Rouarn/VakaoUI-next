@@ -12,7 +12,7 @@ const saved = ref(false)
 const dirty = ref(false)
 
 const model = reactive({
-  name: '林一',
+  name: '夏季',
   email: 'linyi@vakao.cn',
   language: 'zh-CN' as string | number | null,
   publicProfile: true,
@@ -97,7 +97,7 @@ function save(): void {
               <div class="avatar-row">
                 <span class="avatar">林</span>
                 <div class="avatar-row__meta">
-                  <div class="avatar-row__name">林一</div>
+                  <div class="avatar-row__name">夏季</div>
                   <div class="avatar-row__hint">支持 JPG / PNG，建议 400×400</div>
                 </div>
                 <VkButton size="small">更换头像</VkButton>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import { useDismiss, useNamespace } from '@/core'
+import { useDismiss, useFloating, useNamespace, usePopupContainer } from '@/core'
 import type { DropdownEmits, DropdownItem, DropdownProps } from './types'
 
 defineOptions({ name: 'VkDropdown' })
@@ -16,12 +16,26 @@ const props = withDefaults(defineProps<DropdownProps>(), {
 const emit = defineEmits<DropdownEmits>()
 
 const ns = useNamespace('dropdown')
+const container = usePopupContainer()
 const rootRef = ref<HTMLElement | null>(null)
 const triggerRef = ref<HTMLElement | null>(null)
 const panelRef = ref<HTMLElement | null>(null)
 const innerOpen = ref(false)
 
 const isOpen = computed(() => props.open ?? innerOpen.value)
+
+const { floatingStyle, actualPlacement } = useFloating({
+  trigger: triggerRef,
+  panel: panelRef,
+  open: () => isOpen.value,
+  placement: () => props.placement,
+  align: 'start',
+  gap: 6,
+  matchTriggerWidth: true,
+  minWidth: 160,
+  maxWidth: 320,
+  maxHeight: 320,
+})
 
 function setOpen(next: boolean): void {
   if (next === isOpen.value) return
@@ -117,15 +131,20 @@ useDismiss({
     >
       <slot name="trigger"><slot /></slot>
     </span>
+  </span>
 
+  <Teleport :to="container">
     <Transition :name="ns.m('fade')">
       <div
         v-if="isOpen"
         ref="panelRef"
-        :class="[ns.e('panel'), ns.m(placement)]"
+        :class="[ns.e('panel'), ns.m(actualPlacement)]"
+        :style="floatingStyle"
         role="menu"
         :aria-label="ariaLabel"
         @keydown="onMenuKeydown"
+        @mouseenter="onTriggerEnter"
+        @mouseleave="onRootLeave"
       >
         <template v-for="(item, index) in items" :key="`${item.key}-${index}`">
           <div v-if="item.divider" :class="ns.e('divider')" role="separator" />
@@ -142,5 +161,5 @@ useDismiss({
         </template>
       </div>
     </Transition>
-  </span>
+  </Teleport>
 </template>

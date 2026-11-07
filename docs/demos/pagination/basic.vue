@@ -7,18 +7,27 @@ const pageSize = ref(10)
 </script>
 
 <template>
-  <VkPagination
-    v-model:current="current"
-    v-model:page-size="pageSize"
-    :total="236"
-    show-size-changer
-  />
-  <p class="result">第 {{ current }} 页，每页 {{ pageSize }} 条</p>
+  <div class="demo-stack">
+    <VkPagination
+      v-model:current="current"
+      v-model:page-size="pageSize"
+      :total="236"
+      show-size-changer
+    />
+    <p class="result">第 {{ current }} 页，每页 {{ pageSize }} 条</p>
+  </div>
 </template>
 
 <style scoped>
+.demo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
 .result {
-  margin: 12px 0 0;
+  margin: 0;
   color: var(--vk-text-color-2);
   font-size: 13px;
 }

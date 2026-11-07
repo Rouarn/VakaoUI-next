@@ -11,7 +11,7 @@ const allRows: TableRow[] = [
   {
     id: 1,
     name: '品牌官网',
-    owner: '林一',
+    owner: '夏季',
     status: '已上线',
     progress: 100,
     updated: '2026-10-02',
@@ -19,7 +19,7 @@ const allRows: TableRow[] = [
   { id: 2, name: '数据看板', owner: '周舟', status: '进行中', progress: 62, updated: '2026-10-18' },
   { id: 3, name: '移动端', owner: '陈默', status: '已上线', progress: 100, updated: '2026-09-27' },
   { id: 4, name: '帮助中心', owner: '苏禾', status: '草稿', progress: 18, updated: '2026-11-01' },
-  { id: 5, name: '活动页', owner: '林一', status: '进行中', progress: 44, updated: '2026-10-30' },
+  { id: 5, name: '活动页', owner: '夏季', status: '进行中', progress: 44, updated: '2026-10-30' },
   { id: 6, name: '设计规范', owner: '周舟', status: '草稿', progress: 9, updated: '2026-11-03' },
   { id: 7, name: '开放平台', owner: '陈默', status: '进行中', progress: 71, updated: '2026-10-21' },
 ]
@@ -112,7 +112,7 @@ const statusClass: Record<string, string> = {
       <div class="app__nav-foot">
         <span class="app__avatar">林</span>
         <div>
-          <div class="app__user">林一</div>
+          <div class="app__user">夏季</div>
           <div class="app__user-mail">linyi@vakao.cn</div>
         </div>
       </div>

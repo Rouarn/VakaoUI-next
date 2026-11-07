@@ -84,12 +84,11 @@
 }
 
 .vk-select__listbox {
-  position: absolute;
-  z-index: var(--vk-z-index-dropdown);
-  top: calc(100% + 6px);
-  left: 0;
-  right: 0;
+  z-index: var(--vk-z-index-popup);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
   max-height: 260px;
   margin: 0;
   padding: var(--vk-space-1);
@@ -99,13 +98,19 @@
   background: var(--vk-color-modal);
   box-shadow: var(--vk-shadow-2);
   list-style: none;
+  overscroll-behavior: contain;
 }
 
 .vk-select__option {
-  padding: var(--vk-space-2) var(--vk-space-3);
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 8px 10px;
   border-radius: var(--vk-radius-small);
   color: var(--vk-text-color-1);
+  line-height: 1.5;
   cursor: pointer;
+  transition: background var(--vk-motion-fast) var(--vk-easing-standard);
 }
 
 .vk-select__option--active {
@@ -113,12 +118,14 @@
 }
 
 .vk-select__option--selected {
-  color: var(--vk-color-primary);
+  background: var(--vk-color-primary-soft);
+  color: var(--vk-color-primary-soft-text);
   font-weight: var(--vk-font-weight-strong);
 }
 
 .vk-select__option--selected.vk-select__option--active {
   background: var(--vk-color-primary-suppl);
+  color: var(--vk-color-primary);
 }
 
 .vk-select__option--disabled {

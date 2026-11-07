@@ -21,6 +21,7 @@ const props = withDefaults(defineProps<ConfigProviderProps>(), {
   size: undefined,
   zIndex: undefined,
   locale: undefined,
+  getPopupContainer: undefined,
   tag: 'div',
 })
 
@@ -40,13 +41,17 @@ const locale = computed<VkLocale>(() => {
   return { ...(parent?.locale.value ?? zhCN), ...local }
 })
 
+function resolvePopupContainer(): HTMLElement | null {
+  return props.getPopupContainer?.() ?? parent?.getPopupContainer?.() ?? null
+}
+
 provide(configProviderInjectionKey, {
   theme,
   themeName,
   size,
   zIndex,
   locale,
-  getPopupContainer: parent?.getPopupContainer,
+  getPopupContainer: resolvePopupContainer,
 } satisfies ConfigProviderContext)
 </script>
 

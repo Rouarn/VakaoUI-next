@@ -1,5 +1,4 @@
 .vk-popconfirm {
-  position: relative;
   display: inline-flex;
   font-family: var(--vk-font-family);
 }
@@ -17,38 +16,17 @@
 }
 
 .vk-popconfirm__panel {
-  position: absolute;
-  z-index: var(--vk-z-index-dropdown);
+  z-index: var(--vk-z-index-popup);
   box-sizing: border-box;
   width: 240px;
+  max-width: 100%;
+  overflow: auto;
   padding: var(--vk-space-3);
   border: var(--vk-border-width) solid var(--vk-border-color);
   border-radius: var(--vk-radius-medium);
   background: var(--vk-color-modal);
   color: var(--vk-text-color-1);
   box-shadow: var(--vk-shadow-2);
-}
-
-.vk-popconfirm--top {
-  bottom: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.vk-popconfirm--bottom {
-  top: calc(100% + 8px);
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.vk-popconfirm--left {
-  top: 0;
-  right: calc(100% + 8px);
-}
-
-.vk-popconfirm--right {
-  top: 0;
-  left: calc(100% + 8px);
 }
 
 .vk-popconfirm__title {

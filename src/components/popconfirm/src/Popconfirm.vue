@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import { useDismiss, useLocale, useNamespace } from '@/core'
+import { useDismiss, useFloating, useLocale, useNamespace, usePopupContainer } from '@/core'
 import type { PopconfirmEmits, PopconfirmProps, PopconfirmSlots } from './types'
 
 let popconfirmSeed = 0
@@ -30,6 +30,7 @@ defineSlots<PopconfirmSlots>()
 
 const ns = useNamespace('popconfirm')
 const locale = useLocale()
+const container = usePopupContainer()
 
 const rootRef = ref<HTMLElement | null>(null)
 const triggerRef = ref<HTMLElement | null>(null)
@@ -39,6 +40,15 @@ const innerOpen = ref(false)
 
 const isOpen = computed(() => props.open ?? innerOpen.value)
 const titleId = nextTitleId()
+
+const { floatingStyle, actualPlacement } = useFloating({
+  trigger: triggerRef,
+  panel: panelRef,
+  open: () => isOpen.value,
+  placement: () => props.placement,
+  matchTriggerWidth: true,
+  maxWidth: 280,
+})
 
 function setOpen(next: boolean): void {
   if (next === isOpen.value) return
@@ -106,12 +116,15 @@ useDismiss({
     >
       <slot name="trigger" />
     </span>
+  </span>
 
+  <Teleport :to="container">
     <Transition :name="ns.m('fade')">
       <div
         v-if="isOpen"
         ref="panelRef"
-        :class="[ns.e('panel'), ns.m(placement)]"
+        :class="[ns.e('panel'), ns.m(actualPlacement)]"
+        :style="floatingStyle"
         role="alertdialog"
         :aria-labelledby="titleId"
         :aria-describedby="content || $slots.default ? `${titleId}-content` : undefined"
@@ -138,5 +151,5 @@ useDismiss({
         </div>
       </div>
     </Transition>
-  </span>
+  </Teleport>
 </template>

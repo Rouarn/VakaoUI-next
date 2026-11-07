@@ -110,14 +110,16 @@ describe('VkSelect', () => {
   })
 
   it('opens the listbox and selects an option', async () => {
-    const wrapper = mount(VkSelect, { props: { options } })
+    const wrapper = mount(VkSelect, { props: { options }, attachTo: document.body })
     const combo = wrapper.get('[role="combobox"]')
     await combo.trigger('click')
     expect(combo.attributes('aria-expanded')).toBe('true')
-    const list = wrapper.get('[role="listbox"]')
-    expect(list.findAll('[role="option"]')).toHaveLength(3)
-    await list.findAll('[role="option"]')[1].trigger('click')
+    const list = document.querySelector('[role="listbox"]')
+    expect(list?.querySelectorAll('[role="option"]')).toHaveLength(3)
+    ;(list?.querySelectorAll<HTMLElement>('[role="option"]')[1] as HTMLElement).click()
+    await nextTick()
     expect(wrapper.emitted('update:modelValue')?.[0]).toEqual(['sh'])
+    wrapper.unmount()
   })
 
   it('supports keyboard selection', async () => {
@@ -237,7 +239,7 @@ describe('select focus', () => {
     })
     const combo = wrapper.get('[role="combobox"]')
     await combo.trigger('click')
-    await wrapper.get('[role="option"]').trigger('click')
+    ;(document.querySelector<HTMLElement>('[role="option"]') as HTMLElement).click()
     await nextTick()
     expect(document.activeElement).toBe(combo.element)
     wrapper.unmount()

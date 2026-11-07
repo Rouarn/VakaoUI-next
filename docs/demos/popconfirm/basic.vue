@@ -8,22 +8,27 @@ const removed = ref(0)
 </script>
 
 <template>
-  <VkPopconfirm
-    title="确认删除该项目？"
-    content="删除后无法恢复，请谨慎操作。"
-    confirm-type="danger"
-    @confirm="removed += 1"
-  >
-    <template #trigger>
-      <VkButton>删除项目</VkButton>
-    </template>
-  </VkPopconfirm>
+  <div class="demo-stack">
+    <VkPopconfirm
+      title="确认删除该项目？"
+      content="删除后无法恢复，请谨慎操作。"
+      confirm-type="danger"
+      @confirm="removed += 1"
+    >
+      <template #trigger>
+        <VkButton>删除项目</VkButton>
+      </template>
+    </VkPopconfirm>
 
-  <VkAlert v-if="removed" class="tip" type="success" :title="`已删除 ${removed} 次`" />
+    <VkAlert v-if="removed" type="success" :title="`已删除 ${removed} 次`" />
+  </div>
 </template>
 
 <style scoped>
-.tip {
-  margin-top: 16px;
+.demo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 </style>

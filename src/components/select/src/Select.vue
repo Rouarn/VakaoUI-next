@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import { useDismiss, useFormControl, useLocale, useNamespace } from '@/core'
+import {
+  useDismiss,
+  useFloating,
+  useFormControl,
+  useLocale,
+  useNamespace,
+  usePopupContainer,
+} from '@/core'
 import type { StatusType } from '@/core/types'
 import type { SelectEmits, SelectOption, SelectProps } from './types'
 
@@ -23,6 +30,7 @@ const emit = defineEmits<SelectEmits>()
 
 const ns = useNamespace('select')
 const locale = useLocale()
+const container = usePopupContainer()
 const {
   inputId,
   disabled: isDisabled,
@@ -43,8 +51,19 @@ const seed = (() => {
 
 const rootRef = ref<HTMLElement | null>(null)
 const triggerRef = ref<HTMLElement | null>(null)
+const listboxRef = ref<HTMLElement | null>(null)
 const open = ref(false)
 const activeIndex = ref(-1)
+
+const { floatingStyle } = useFloating({
+  trigger: triggerRef,
+  panel: listboxRef,
+  open: () => open.value,
+  gap: 6,
+  matchTriggerWidth: true,
+  maxWidth: 420,
+  maxHeight: 260,
+})
 
 const listboxId = `vk-select-${seed}-listbox`
 
@@ -175,7 +194,7 @@ function onBlur(event: FocusEvent): void {
 useDismiss({
   enabled: () => open.value,
   onDismiss: closePanel,
-  inside: [rootRef],
+  inside: [rootRef, listboxRef],
 })
 
 defineExpose({ focus: () => triggerRef.value?.focus() })
@@ -239,12 +258,16 @@ defineExpose({ focus: () => triggerRef.value?.focus() })
         />
       </svg>
     </div>
+  </div>
 
+  <Teleport :to="container">
     <Transition :name="ns.m('fade')">
       <ul
         v-if="open"
+        ref="listboxRef"
         :id="listboxId"
         :class="ns.e('listbox')"
+        :style="floatingStyle"
         role="listbox"
         :aria-label="ariaLabel"
       >
@@ -274,5 +297,5 @@ defineExpose({ focus: () => triggerRef.value?.focus() })
         </li>
       </ul>
     </Transition>
-  </div>
+  </Teleport>
 </template>

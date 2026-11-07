@@ -12,7 +12,7 @@ const columns: TableColumn[] = [
 ]
 
 const rows: TableRow[] = [
-  { id: 1, name: '品牌官网', owner: '林一', status: '已上线', updated: '2026-10-02' },
+  { id: 1, name: '品牌官网', owner: '夏季', status: '已上线', updated: '2026-10-02' },
   { id: 2, name: '数据看板', owner: '周舟', status: '进行中', updated: '2026-10-18' },
   { id: 3, name: '移动端', owner: '陈默', status: '已上线', updated: '2026-09-27' },
   { id: 4, name: '帮助中心', owner: '苏禾', status: '草稿', updated: '2026-11-01' },

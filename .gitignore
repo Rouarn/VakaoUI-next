@@ -1,9 +1,11 @@
 node_modules
 dist
 coverage
-.vitepress
-docs/.vitepress/cache
+
+# 文档站：源码、配置、主题、示例全部纳入版本管理，只忽略构建产物
 docs/.vitepress/dist
+docs/.vitepress/cache
+docs/.vitepress/temp
 docs/.vitepress/data/api.json
 *.tsbuildinfo
 .DS_Store

@@ -98,6 +98,7 @@
     "vue-tsc": "^3.3.14"
   },
   "dependencies": {
+    "@floating-ui/dom": "^1.8.0",
     "async-validator": "^4.2.5"
   },
   "lint-staged": {
