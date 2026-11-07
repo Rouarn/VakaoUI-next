@@ -58,14 +58,14 @@ const theme = ref<'light' | 'dark' | 'auto'>('auto')
 
 ## 品牌色
 
-| 令牌                         | 亮色      | 暗色      | 用途             |
-| ---------------------------- | --------- | --------- | ---------------- |
-| `--vk-color-primary`         | `#C43A21` | `#FF8A5B` | 交互、链接、选中 |
-| `--vk-text-color-on-primary` | `#FFF8F4` | `#171210` | 实心按钮文字     |
-| `--vk-color-orange`          | `#F0995F` | 同左      | 四色星 · warning |
-| `--vk-color-blue`            | `#5FBEDC` | 同左      | 四色星 · info    |
-| `--vk-color-purple`          | `#A27FC2` | 同左      | 四色星 · error   |
-| `--vk-color-yellow`          | `#EDDF55` | 同左      | 四色星 · success |
+| 令牌                         | 亮色      | 暗色      | 用途              |
+| ---------------------------- | --------- | --------- | ----------------- |
+| `--vk-color-primary`         | `#C43A21` | `#FF8A5B` | 交互、链接、选中  |
+| `--vk-text-color-on-primary` | `#FFF8F4` | `#171210` | 实心按钮文字      |
+| `--vk-color-orange`          | `#F0995F` | 同左      | 四色星（warning） |
+| `--vk-color-blue`            | `#5FBEDC` | 同左      | 四色星（info）    |
+| `--vk-color-purple`          | `#A27FC2` | 同左      | 四色星（error）   |
+| `--vk-color-yellow`          | `#EDDF55` | 同左      | 四色星（success） |
 
 状态色的语义映射与对比度推导见 [状态色](/design/status-colors)。
 

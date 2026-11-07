@@ -101,6 +101,10 @@
   overscroll-behavior: contain;
 }
 
+.vk-select__listbox > li {
+  list-style: none;
+}
+
 .vk-select__option {
   display: flex;
   align-items: center;

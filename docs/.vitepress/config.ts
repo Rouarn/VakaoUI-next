@@ -121,8 +121,8 @@ export default defineConfig({
     socialLinks: [],
     search: { provider: 'local' },
     footer: {
-      message: '纸面、墨色与四色星 · 全部组件只消费 --vk-* 令牌',
-      copyright: 'VaKao UI · MIT',
+      message: '纸面、墨色与四色星，全部组件只消费 --vk-* 令牌',
+      copyright: 'VaKao UI，MIT 许可',
     },
     outline: { level: [2, 3], label: '本页目录' },
     docFooter: { prev: '上一页', next: '下一页' },

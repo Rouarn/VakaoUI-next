@@ -23,7 +23,8 @@ const value = ref(36)
 <style scoped>
 .stack {
   display: grid;
-  justify-items: start;
+  justify-items: center;
+  width: 100%;
   gap: 16px;
 }
 </style>

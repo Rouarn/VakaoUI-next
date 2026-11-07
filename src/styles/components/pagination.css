@@ -8,10 +8,16 @@
   font-size: var(--vk-font-size-small);
 }
 
-.vk-pagination__list {
+.vk-pagination .vk-pagination__list {
   display: flex;
   align-items: center;
   gap: var(--vk-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vk-pagination .vk-pagination__list > li {
   margin: 0;
   padding: 0;
   list-style: none;

@@ -22,6 +22,12 @@
   border-radius: 0;
 }
 
+.vk-menu__item-wrap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .vk-menu__item {
   box-sizing: border-box;
   display: flex;
@@ -86,6 +92,12 @@
 
 .vk-menu__sub {
   margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vk-menu__sub > li {
+  margin: 0;
   padding: 0;
   list-style: none;
 }

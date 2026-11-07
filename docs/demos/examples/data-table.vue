@@ -476,21 +476,12 @@ const statusClass: Record<string, string> = {
 .status {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
   padding: 2px 9px;
   border: 1px solid;
   border-radius: var(--vk-radius-full);
   font-size: 11.5px;
   line-height: 18px;
   white-space: nowrap;
-}
-
-.status::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: currentColor;
 }
 
 .status.ok {

@@ -22,7 +22,6 @@ async function submit(): Promise<void> {
     <aside class="auth__brand">
       <div class="auth__brand-top">
         <span class="auth__mark">VaKao</span>
-        <span class="auth__mark-dot" />
       </div>
 
       <div class="auth__brand-copy">
@@ -38,7 +37,7 @@ async function submit(): Promise<void> {
           <span style="background: #a27fc2" />
           <span style="background: #5fbedc" />
         </div>
-        <span class="auth__foot-text">VaKao Design System · Paper &amp; Ink</span>
+        <span class="auth__foot-text">VaKao Design System，Paper &amp; Ink</span>
       </div>
     </aside>
 
@@ -160,14 +159,6 @@ async function submit(): Promise<void> {
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.02em;
-}
-
-.auth__mark-dot {
-  width: 6px;
-  height: 6px;
-  margin-top: 6px;
-  border-radius: 50%;
-  background: #ffd9c9;
 }
 
 .auth__eyebrow {

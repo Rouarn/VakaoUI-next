@@ -11,10 +11,7 @@ const notify = ref(true)
 <template>
   <div class="vk-hero">
     <div>
-      <span class="vk-hero__eyebrow">
-        <span class="vk-hero__dot" />
-        VaKao Design System · 0.1.0
-      </span>
+      <span class="vk-hero__eyebrow"> VaKao Design System 0.1.0 </span>
       <h1 class="vk-hero__title">
         让每个界面<br />
         落在<em>同一张纸</em>上。

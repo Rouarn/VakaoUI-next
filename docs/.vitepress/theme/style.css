@@ -404,6 +404,21 @@ body {
   padding-left: 22px;
 }
 
+/* 组件内部的结构性列表（分页、菜单、色板等）不套用正文列表样式，避免出现圆点与额外缩进 */
+.vp-doc ul[class^='vk-'],
+.vp-doc ul[class*=' vk-'] {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vp-doc ul[class^='vk-'] > li,
+.vp-doc ul[class*=' vk-'] > li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .vp-doc li {
   margin: 7px 0;
 }
@@ -1098,13 +1113,6 @@ body {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.01em;
-}
-
-.vk-hero__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--vk-color-primary);
 }
 
 .vk-hero__title {

@@ -56,10 +56,10 @@
 | `--vk-border-color`            | `#E3DED4`             | 由 ink 与 paper 混合得到的 1px 边框色 |
 | `--vk-border-color-strong`     | `#CEC7BA`             | 需要更明确边界时使用                  |
 | `--vk-divider-color`           | `rgba(23,21,18,.10)`  | 分隔线                                |
-| `--vk-color-orange`            | `#F0995F`             | 四色星 · 上                           |
-| `--vk-color-blue`              | `#5FBEDC`             | 四色星 · 右                           |
-| `--vk-color-purple`            | `#A27FC2`             | 四色星 · 下                           |
-| `--vk-color-yellow`            | `#EDDF55`             | 四色星 · 左                           |
+| `--vk-color-orange`            | `#F0995F`             | 四色星（上）                          |
+| `--vk-color-blue`              | `#5FBEDC`             | 四色星（右）                          |
+| `--vk-color-purple`            | `#A27FC2`             | 四色星（下）                          |
+| `--vk-color-yellow`            | `#EDDF55`             | 四色星（左）                          |
 
 暗色覆盖：背景 `#121210`、卡片 `#1A1916`、浮层 `#201E1A`、正文 `#F4F1E9`、次级 `#BDB7AB`、注释 `#928C80`。暗色下强调色提亮为 `#FF8A5B`（对暗底 8.07:1），按钮文字改为深墨 `#171210`（8.00:1）——亮色是"深底白字"，暗色是"亮底深字"，两边都过 AA，且两套主题共享同一组键名。
 
