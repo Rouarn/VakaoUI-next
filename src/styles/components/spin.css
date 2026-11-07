@@ -1,0 +1,69 @@
+.vk-spin {
+  position: relative;
+  display: block;
+  font-family: var(--vk-font-family);
+}
+
+.vk-spin__mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--vk-radius-medium);
+  background: var(--vk-color-card);
+  opacity: 0.6;
+}
+
+.vk-spin__indicator {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vk-space-2);
+  color: var(--vk-color-primary);
+}
+
+.vk-spin__ring {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--vk-color-primary-suppl);
+  border-top-color: var(--vk-color-primary);
+  border-radius: 50%;
+  animation: vk-spin-rotate 720ms linear infinite;
+}
+
+.vk-spin__tip {
+  color: var(--vk-text-color-2);
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-spin__content {
+  min-height: 0;
+}
+
+.vk-spin--small .vk-spin__ring {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+}
+
+.vk-spin--large .vk-spin__ring {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+@keyframes vk-spin-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-spin__ring {
+    animation-duration: 2400ms;
+  }
+}

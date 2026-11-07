@@ -1,0 +1,112 @@
+{
+  "name": "@vakao/ui",
+  "version": "0.2.0",
+  "description": "VaKao Vue 3 component library",
+  "type": "module",
+  "license": "MIT",
+  "packageManager": "pnpm@12.16.1",
+  "engines": {
+    "node": ">=20.19.0",
+    "pnpm": ">=10.0.0"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./resolver": {
+      "types": "./dist/resolver.d.ts",
+      "import": "./dist/resolver.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.js"
+    },
+    "./theme.css": "./dist/theme.css",
+    "./styles.css": "./dist/styles.css",
+    "./styles/*": "./dist/styles/*",
+    "./*/style.css": "./dist/styles/components/*.css",
+    "./*": {
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/build-styles.mjs",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "size": "node scripts/check-size.mjs",
+    "api": "node scripts/gen-api.mjs",
+    "docs:dev": "node scripts/build-styles.mjs && node scripts/gen-api.mjs && vitepress dev docs",
+    "docs:build": "node scripts/build-styles.mjs && node scripts/gen-api.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "check": "pnpm lint && pnpm format:check && pnpm typecheck && pnpm test:run && pnpm build && pnpm size",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish",
+    "prepublishOnly": "pnpm check",
+    "prepare": "husky"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vitest/coverage-v8": "^5.1.0",
+    "@vue/server-renderer": "^3.5.45",
+    "@vue/test-utils": "^2.5.1",
+    "axe-core": "^4.14.0",
+    "eslint": "^10.14.0",
+    "eslint-plugin-vue": "^10.12.0",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "jsdom": "^31.0.0",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.6",
+    "vite-plugin-dts": "^5.1.2",
+    "vitepress": "^1.6.4",
+    "vitest": "^5.1.0",
+    "vue": "^3.5.45",
+    "vue-component-meta": "^3.3.14",
+    "vue-tsc": "^3.3.14"
+  },
+  "dependencies": {
+    "async-validator": "^4.2.5"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,yml,yaml}": [
+      "prettier --write"
+    ]
+  }
+}

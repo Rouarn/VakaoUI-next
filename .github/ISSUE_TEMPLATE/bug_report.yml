@@ -1,0 +1,58 @@
+name: Bug 报告
+description: 组件行为、样式或可访问性问题
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。请尽量提供最小复现，避免只贴截图。
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: '@vakao/ui 的版本号'
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 环境
+      description: 浏览器、操作系统、Vue 版本、构建工具
+      placeholder: Chrome 130 / macOS 15 / Vue 3.5 / Vite 8
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开...
+        2. 点击...
+        3. 看到...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际结果
+      description: 包含报错信息或控制台输出
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 最小复现
+      description: 仓库链接或可运行的代码片段
+  - type: checkboxes
+    id: a11y
+    attributes:
+      label: 可访问性
+      options:
+        - label: 这个问题与键盘操作、焦点或读屏有关

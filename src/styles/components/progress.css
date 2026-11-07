@@ -1,0 +1,93 @@
+.vk-progress {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vk-space-3);
+  width: 100%;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-progress--circle {
+  position: relative;
+  display: inline-flex;
+  width: auto;
+  justify-content: center;
+}
+
+.vk-progress__track {
+  flex: 1 1 auto;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--vk-fill-color-hover);
+  overflow: hidden;
+}
+
+.vk-progress__fill {
+  min-width: 2px;
+  border-radius: inherit;
+  background: var(--vk-color-primary);
+  transition: width var(--vk-motion-base) var(--vk-easing-standard);
+}
+
+.vk-progress__label {
+  flex: none;
+  color: var(--vk-text-color-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.vk-progress--circle .vk-progress__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vk-text-color-1);
+  font-size: var(--vk-font-size-medium);
+}
+
+.vk-progress__circle-track {
+  stroke: var(--vk-fill-color-hover);
+}
+
+.vk-progress__circle-fill {
+  stroke: var(--vk-color-primary);
+  transition: stroke-dashoffset var(--vk-motion-base) var(--vk-easing-standard);
+}
+
+.vk-progress--success .vk-progress__fill,
+.vk-progress--success .vk-progress__circle-fill {
+  stroke: var(--vk-color-success);
+  background: var(--vk-color-success);
+}
+
+.vk-progress--warning .vk-progress__fill,
+.vk-progress--warning .vk-progress__circle-fill {
+  stroke: var(--vk-color-warning);
+  background: var(--vk-color-warning);
+}
+
+.vk-progress--error .vk-progress__fill,
+.vk-progress--error .vk-progress__circle-fill {
+  stroke: var(--vk-color-error);
+  background: var(--vk-color-error);
+}
+
+.vk-progress--success .vk-progress__label {
+  color: var(--vk-color-success-text);
+}
+
+.vk-progress--warning .vk-progress__label {
+  color: var(--vk-color-warning-text);
+}
+
+.vk-progress--error .vk-progress__label {
+  color: var(--vk-color-error-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-progress__fill,
+  .vk-progress__circle-fill {
+    transition: none;
+  }
+}

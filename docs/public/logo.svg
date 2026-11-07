@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="VaKao">
+  <rect width="48" height="48" rx="10" fill="#F3F1EC" />
+  <path
+    d="M24 7c1.4 8.4 4.6 11.6 13 13-8.4 1.4-11.6 4.6-13 13-1.4-8.4-4.6-11.6-13-13 8.4-1.4 11.6-4.6 13-13Z"
+    fill="#0B6F86"
+  />
+  <circle cx="36" cy="36" r="3.4" fill="#F0995F" />
+  <circle cx="12" cy="36" r="3.4" fill="#A27FC2" />
+  <circle cx="24" cy="41" r="2.6" fill="#EDDF55" />
+</svg>

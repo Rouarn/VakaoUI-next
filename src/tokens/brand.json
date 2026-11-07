@@ -1,0 +1,38 @@
+{
+  "$source": "VaKao-品牌视觉资源/tokens.json + docs/DESIGN-TOKENS.md（0.2.0 起强调色改为朱砂）",
+  "color": {
+    "paper": "#F3F1EC",
+    "raised": "#FAF9F5",
+    "ink": "#171512",
+    "strong": "#0E0D0B",
+    "muted": "#57524A",
+    "faint": "#847E73",
+    "accent": "#C43A21",
+    "orange": "#F0995F",
+    "blue": "#5FBEDC",
+    "purple": "#A27FC2",
+    "yellow": "#EDDF55",
+    "darkBackground": "#121210",
+    "darkText": "#F4F1E9"
+  },
+  "font": {
+    "display": "Archivo",
+    "sans": "Inter",
+    "serif": "Instrument Serif",
+    "cjk": "PingFang SC / Noto Sans SC",
+    "mono": "SF Mono / Menlo"
+  },
+  "radius": {
+    "sm": 6,
+    "md": 10,
+    "lg": 14,
+    "xl": 20
+  },
+  "space": [4, 8, 12, 16, 24, 32, 48, 64, 80, 96],
+  "motion": {
+    "fast": 160,
+    "base": 240,
+    "slow": 480
+  },
+  "border": "rgba(23, 21, 18, 0.10)"
+}

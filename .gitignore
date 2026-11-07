@@ -1,0 +1,16 @@
+node_modules
+dist
+coverage
+.vitepress
+docs/.vitepress/cache
+docs/.vitepress/dist
+docs/.vitepress/data/api.json
+*.tsbuildinfo
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+.idea
+.vscode/*
+!.vscode/extensions.json

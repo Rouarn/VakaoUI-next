@@ -1,0 +1,186 @@
+.vk-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--vk-space-2);
+  height: var(--vk-height-medium);
+  padding: 0 var(--vk-space-4);
+  border: var(--vk-border-width) solid transparent;
+  border-radius: var(--vk-radius-medium);
+  background: transparent;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--vk-motion-fast) var(--vk-easing-standard),
+    border-color var(--vk-motion-fast) var(--vk-easing-standard),
+    color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-button:focus-visible {
+  outline: 2px solid var(--vk-color-primary);
+  outline-offset: 2px;
+}
+
+.vk-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vk-button__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: vk-button-spin var(--vk-motion-slow) linear infinite;
+}
+
+.vk-button--small {
+  height: var(--vk-height-small);
+  padding: 0 var(--vk-space-3);
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-button--large {
+  height: var(--vk-height-large);
+  padding: 0 var(--vk-space-5);
+  font-size: var(--vk-font-size-large);
+}
+
+.vk-button--block {
+  display: flex;
+  width: 100%;
+}
+
+.vk-button--default.vk-button--solid {
+  border-color: var(--vk-border-color);
+  background: var(--vk-color-card);
+}
+
+.vk-button--default.vk-button--solid:hover:not(:disabled) {
+  border-color: var(--vk-border-color);
+  background: var(--vk-color-hover);
+}
+
+.vk-button--default.vk-button--solid:active:not(:disabled) {
+  background: var(--vk-color-pressed);
+}
+
+.vk-button--primary.vk-button--solid {
+  border-color: var(--vk-color-primary);
+  background: var(--vk-color-primary);
+  color: var(--vk-text-color-on-primary);
+}
+
+.vk-button--primary.vk-button--solid:hover:not(:disabled) {
+  border-color: var(--vk-color-primary-hover);
+  background: var(--vk-color-primary-hover);
+}
+
+.vk-button--primary.vk-button--solid:active:not(:disabled) {
+  border-color: var(--vk-color-primary-pressed);
+  background: var(--vk-color-primary-pressed);
+}
+
+.vk-button--default.vk-button--outline {
+  border-color: var(--vk-border-color);
+  background: transparent;
+}
+
+.vk-button--default.vk-button--outline:hover:not(:disabled) {
+  background: var(--vk-color-hover);
+}
+
+.vk-button--primary.vk-button--outline {
+  border-color: var(--vk-color-primary);
+  color: var(--vk-color-primary);
+  background: transparent;
+}
+
+.vk-button--primary.vk-button--outline:hover:not(:disabled) {
+  background: var(--vk-color-primary-suppl);
+}
+
+.vk-button--default.vk-button--ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+.vk-button--default.vk-button--ghost:hover:not(:disabled) {
+  background: var(--vk-fill-color);
+}
+
+.vk-button--primary.vk-button--ghost {
+  border-color: transparent;
+  color: var(--vk-color-primary);
+  background: transparent;
+}
+
+.vk-button--primary.vk-button--ghost:hover:not(:disabled) {
+  background: var(--vk-color-primary-suppl);
+}
+
+.vk-button--text {
+  height: auto;
+  padding: 0 var(--vk-space-1);
+  border-color: transparent;
+  background: transparent;
+  color: var(--vk-text-color-2);
+}
+
+.vk-button--text:hover:not(:disabled) {
+  color: var(--vk-text-color-1);
+}
+
+.vk-button--primary.vk-button--text {
+  color: var(--vk-color-primary);
+}
+
+.vk-button--primary.vk-button--text:hover:not(:disabled) {
+  color: var(--vk-color-primary-hover);
+}
+
+.vk-button:disabled,
+.vk-button--disabled {
+  cursor: not-allowed;
+}
+
+.vk-button:disabled.vk-button--solid,
+.vk-button--disabled.vk-button--solid {
+  border-color: var(--vk-border-color);
+  background: var(--vk-fill-color);
+  color: var(--vk-text-color-disabled);
+}
+
+.vk-button:disabled.vk-button--outline,
+.vk-button--disabled.vk-button--outline,
+.vk-button:disabled.vk-button--ghost,
+.vk-button--disabled.vk-button--ghost,
+.vk-button:disabled.vk-button--text,
+.vk-button--disabled.vk-button--text {
+  color: var(--vk-text-color-disabled);
+}
+
+@keyframes vk-button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-button {
+    transition: none;
+  }
+
+  .vk-button__spinner {
+    animation-duration: 2.4s;
+  }
+}

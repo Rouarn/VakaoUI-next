@@ -1,0 +1,58 @@
+name: Publish
+
+# 发布由维护者手动触发。registry 与 token 只通过仓库 Secrets 注入，
+# 仓库内不保存任何凭据。需要的 Secrets：
+#   NPM_REGISTRY  云效私有制品仓库地址，例如 https://packages.aliyun.com/xxx/npm/npm-registry/
+#   NPM_TOKEN     云效个人访问令牌
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 发布标签（latest / next / beta）
+        required: true
+        default: latest
+        type: choice
+        options: [latest, next, beta]
+      dry-run:
+        description: 仅演练，不真正发布
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm-release
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check
+      - run: pnpm docs:build
+
+      - name: Publish to private registry
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_REGISTRY: ${{ secrets.NPM_REGISTRY }}
+        run: |
+          pnpm publish --no-git-checks --access restricted --tag "${{ inputs.tag }}" ${{ inputs.dry-run && '--dry-run' || '' }}
+
+      - name: Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-dist-${{ github.run_number }}
+          path: docs/.vitepress/dist
+          retention-days: 14

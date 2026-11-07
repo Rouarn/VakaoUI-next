@@ -1,0 +1,115 @@
+.vk-switch {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  cursor: pointer;
+}
+
+.vk-switch__track {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 42px;
+  height: 24px;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: 999px;
+  background: var(--vk-fill-color-hover);
+  transition:
+    background-color var(--vk-motion-fast) var(--vk-easing-standard),
+    border-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--vk-color-card);
+  box-shadow: var(--vk-shadow-1);
+  transition: transform var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-switch--checked .vk-switch__track {
+  border-color: var(--vk-color-primary);
+  background: var(--vk-color-primary);
+}
+
+.vk-switch--checked .vk-switch__thumb {
+  transform: translateX(18px);
+}
+
+.vk-switch:focus-visible {
+  outline: 2px solid var(--vk-color-primary);
+  outline-offset: 2px;
+}
+
+.vk-switch--small .vk-switch__track {
+  width: 34px;
+  height: 20px;
+}
+
+.vk-switch--small .vk-switch__thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.vk-switch--small.vk-switch--checked .vk-switch__thumb {
+  transform: translateX(14px);
+}
+
+.vk-switch--large .vk-switch__track {
+  width: 50px;
+  height: 28px;
+}
+
+.vk-switch--large .vk-switch__thumb {
+  width: 22px;
+  height: 22px;
+}
+
+.vk-switch--large.vk-switch--checked .vk-switch__thumb {
+  transform: translateX(22px);
+}
+
+.vk-switch--disabled {
+  color: var(--vk-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.vk-switch--disabled .vk-switch__track {
+  opacity: 0.6;
+}
+
+.vk-switch--loading .vk-switch__thumb {
+  animation: vk-switch-pulse var(--vk-motion-slow) var(--vk-easing-standard) infinite;
+}
+
+.vk-switch__label {
+  line-height: 1;
+}
+
+@keyframes vk-switch-pulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-switch__track,
+  .vk-switch__thumb {
+    transition: none;
+  }
+
+  .vk-switch--loading .vk-switch__thumb {
+    animation: none;
+  }
+}

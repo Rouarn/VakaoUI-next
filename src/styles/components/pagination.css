@@ -1,0 +1,93 @@
+.vk-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--vk-space-3);
+  color: var(--vk-text-color-2);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-pagination__list {
+  display: flex;
+  align-items: center;
+  gap: var(--vk-space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vk-pagination__item {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--vk-height-small);
+  height: var(--vk-height-small);
+  padding: 0 var(--vk-space-2);
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-small);
+  background: var(--vk-color-card);
+  color: var(--vk-text-color-1);
+  font-family: inherit;
+  font-size: var(--vk-font-size-small);
+  cursor: pointer;
+}
+
+.vk-pagination__item:hover:not(:disabled) {
+  border-color: var(--vk-color-primary);
+  color: var(--vk-color-primary);
+}
+
+.vk-pagination__item:focus-visible {
+  outline: 2px solid var(--vk-color-primary);
+  outline-offset: 1px;
+}
+
+.vk-pagination__item--active {
+  border-color: var(--vk-color-primary);
+  background: var(--vk-color-primary);
+  color: var(--vk-text-color-on-primary);
+  font-weight: var(--vk-font-weight-strong);
+}
+
+.vk-pagination__item--active:hover:not(:disabled) {
+  border-color: var(--vk-color-primary);
+  background: var(--vk-color-primary-hover);
+  color: var(--vk-text-color-on-primary);
+}
+
+.vk-pagination__item:disabled {
+  color: var(--vk-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.vk-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--vk-height-small);
+  color: var(--vk-text-color-3);
+  letter-spacing: 1px;
+}
+
+.vk-pagination__select {
+  height: var(--vk-height-small);
+  padding: 0 var(--vk-space-2);
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: var(--vk-radius-small);
+  background: var(--vk-color-card);
+  color: var(--vk-text-color-1);
+  font-family: inherit;
+  font-size: var(--vk-font-size-small);
+  cursor: pointer;
+}
+
+.vk-pagination__select:focus-visible {
+  outline: 2px solid var(--vk-color-primary);
+  outline-offset: 1px;
+}
+
+.vk-pagination--disabled {
+  opacity: 0.7;
+}

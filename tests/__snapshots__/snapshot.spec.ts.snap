@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`snapshot regression > kitchen sink markup is stable 1`] = `
+"<section class="sink"><button class="vk-button vk-button--primary vk-button--solid vk-button--medium" type="button">
+    <!--v-if--><span class="vk-button__content">主要按钮</span>
+  </button><button class="vk-button vk-button--default vk-button--solid vk-button--medium vk-button--loading" type="button" disabled="" aria-busy="true"><span class="vk-button__spinner" aria-hidden="true"></span><span class="vk-button__content">加载中</span></button>
+  <div class="vk-input vk-input--medium">
+    <!--v-if--><input class="vk-input__control" type="text" placeholder="请输入" autocomplete="off" value="hello">
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+    <!--v-if-->
+  </div><label class="vk-checkbox vk-checkbox--medium vk-checkbox--checked"><input class="vk-checkbox__control" type="checkbox" checked="" aria-checked="true"><span class="vk-checkbox__box" aria-hidden="true"><svg class="vk-checkbox__check" viewBox="0 0 12 12" width="11" height="11" fill="none"><path d="M2.5 6.2 4.8 8.5 9.5 3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="vk-checkbox__dash"></span></span><span class="vk-checkbox__label">同意条款</span></label>
+  <div class="vk-progress vk-progress--line vk-progress--normal" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42">
+    <div class="vk-progress__track">
+      <div class="vk-progress__fill" style="width: 42%; height: 8px;"></div>
+    </div><span class="vk-progress__label">42%</span>
+  </div>
+  <div class="vk-alert vk-alert--warning vk-alert--bordered" role="alert"><span class="vk-alert__icon" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none"><path d="M8 2.2 14.2 13H1.8L8 2.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path><path d="M8 6v3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path><circle cx="8" cy="11.4" r="0.9" fill="currentColor"></circle></svg></span>
+    <div class="vk-alert__content">
+      <div class="vk-alert__title">注意</div>
+      <div class="vk-alert__description">内容</div>
+    </div>
+    <!--v-if-->
+  </div>
+  <div class="vk-tabs vk-tabs--line">
+    <div class="vk-tabs__nav" role="tablist"><button id="vk-tabs-1-tab-a" type="button" role="tab" class="vk-tabs__tab vk-tabs__tab--active" aria-selected="true" aria-controls="vk-tabs-1-panel-a" tabindex="0">概览</button><button id="vk-tabs-1-tab-b" type="button" role="tab" class="vk-tabs__tab" aria-selected="false" aria-controls="vk-tabs-1-panel-b" tabindex="-1">设置</button></div>
+    <div id="vk-tabs-1-panel-a" class="vk-tabs__panel" role="tabpanel" aria-labelledby="vk-tabs-1-tab-a" tabindex="0"></div>
+  </div>
+  <div class="vk-table vk-table--medium vk-table--striped">
+    <div class="vk-table__scroll">
+      <table class="vk-table__element">
+        <thead>
+          <tr>
+            <th scope="col" class="vk-table__th" style="text-align: left;"><span>名称</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="vk-table__row">
+            <td class="vk-table__td" style="text-align: left;">项目 A</td>
+          </tr>
+          <!--v-if-->
+        </tbody>
+      </table>
+    </div>
+    <!--v-if-->
+  </div>
+  <nav class="vk-pagination" aria-label="Pagination"><span class="vk-pagination__total">共 42 条</span>
+    <ul class="vk-pagination__list">
+      <li><button type="button" class="vk-pagination__item vk-pagination__item--arrow" aria-label="上一页"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+            <path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg></button></li>
+      <li><button type="button" class="vk-pagination__item" aria-label="1">1</button></li>
+      <li><button type="button" class="vk-pagination__item vk-pagination__item--active" aria-current="page" aria-label="2">2</button></li>
+      <li><button type="button" class="vk-pagination__item" aria-label="3">3</button></li>
+      <li><span class="vk-pagination__ellipsis" aria-hidden="true">…</span></li>
+      <li><button type="button" class="vk-pagination__item" aria-label="5">5</button></li>
+      <li><button type="button" class="vk-pagination__item vk-pagination__item--arrow" aria-label="下一页"><svg viewBox="0 0 16 16" width="12" height="12" fill="none" aria-hidden="true">
+            <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg></button></li>
+    </ul>
+    <!--v-if-->
+  </nav>
+</section>"
+`;

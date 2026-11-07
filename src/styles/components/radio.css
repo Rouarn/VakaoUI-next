@@ -1,0 +1,115 @@
+.vk-radio-group {
+  display: flex;
+  gap: var(--vk-space-4);
+}
+
+.vk-radio-group--vertical {
+  flex-direction: column;
+  gap: var(--vk-space-2);
+}
+
+.vk-radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--vk-space-2);
+  color: var(--vk-text-color-1);
+  font-family: var(--vk-font-family);
+  font-size: var(--vk-font-size-medium);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.vk-radio__control {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.vk-radio__dot {
+  position: relative;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: var(--vk-border-width) solid var(--vk-border-color);
+  border-radius: 50%;
+  background: var(--vk-color-card);
+  transition:
+    border-color var(--vk-motion-fast) var(--vk-easing-standard),
+    background-color var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-radio__dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vk-color-primary);
+  opacity: 0;
+  transform: scale(0.4);
+  transition:
+    opacity var(--vk-motion-fast) var(--vk-easing-standard),
+    transform var(--vk-motion-fast) var(--vk-easing-standard);
+}
+
+.vk-radio:hover:not(.vk-radio--disabled) .vk-radio__dot {
+  border-color: var(--vk-color-primary);
+}
+
+.vk-radio__control:focus-visible + .vk-radio__dot {
+  outline: 2px solid var(--vk-color-primary);
+  outline-offset: 2px;
+}
+
+.vk-radio--checked .vk-radio__dot {
+  border-color: var(--vk-color-primary);
+}
+
+.vk-radio--checked .vk-radio__dot::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vk-radio--small {
+  font-size: var(--vk-font-size-small);
+}
+
+.vk-radio--small .vk-radio__dot {
+  width: 16px;
+  height: 16px;
+}
+
+.vk-radio--large {
+  font-size: var(--vk-font-size-large);
+}
+
+.vk-radio--large .vk-radio__dot {
+  width: 20px;
+  height: 20px;
+}
+
+.vk-radio--disabled {
+  color: var(--vk-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.vk-radio--disabled .vk-radio__dot {
+  background: var(--vk-fill-color);
+}
+
+.vk-radio--disabled .vk-radio__dot::after {
+  background: var(--vk-text-color-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vk-radio__dot,
+  .vk-radio__dot::after {
+    transition: none;
+  }
+}
