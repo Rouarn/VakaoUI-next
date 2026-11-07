@@ -14,7 +14,7 @@ pageClass: page-home
       <h2 class="vk-section__title">三条规则，决定它长什么样</h2>
       <p class="vk-section__desc">不做"另一个默认组件库"。视觉先定规矩，组件再往里填。</p>
     </div>
-    <a class="vk-section__link" href="/design/tokens">设计令牌 →</a>
+    <a class="vk-section__link" href="design/tokens">设计令牌 →</a>
   </div>
   <div class="vk-principles">
     <article class="vk-principle">
@@ -45,10 +45,10 @@ pageClass: page-home
   <div class="vk-section__head">
     <div>
       <p class="vk-section__eyebrow">Components</p>
-      <h2 class="vk-section__title">28 个组件，覆盖日常界面</h2>
+      <h2 class="vk-section__title">69 个组件，覆盖日常界面</h2>
       <p class="vk-section__desc">全部只消费 <code>--vk-*</code> 令牌，亮暗双主题同源，键盘可达。</p>
     </div>
-    <a class="vk-section__link" href="/components/">全部组件 →</a>
+    <a class="vk-section__link" href="components/">全部组件 →</a>
   </div>
   <ComponentIndex />
 </section>
@@ -60,7 +60,7 @@ pageClass: page-home
       <h2 class="vk-section__title">一纸、一墨、四点星</h2>
       <p class="vk-section__desc">状态色沿用四色星映射，不引入红绿新色相；错误态靠图标、文案与边框共同表达。</p>
     </div>
-    <a class="vk-section__link" href="/design/tokens">取色理由 →</a>
+    <a class="vk-section__link" href="design/tokens">取色理由 →</a>
   </div>
   <SwatchGrid label="品牌色板（含朱砂强调色）" />
 </section>

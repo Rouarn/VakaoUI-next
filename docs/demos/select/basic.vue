@@ -26,14 +26,13 @@ const city = ref<string | number | null>('hangzhou')
 .demo-stack {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 12px;
   width: 100%;
+  max-width: 320px;
 }
 
 .field {
-  width: 280px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .result {

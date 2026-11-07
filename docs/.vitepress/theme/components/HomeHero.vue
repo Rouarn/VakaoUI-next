@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { withBase } from 'vitepress'
 import { VkInput } from '@/components/input'
 import { VkSwitch } from '@/components/switch'
 import { VkButton } from '@/components/button'
@@ -21,12 +22,25 @@ const notify = ref(true)
         令牌驱动、亮暗同源，组件本身不发明颜色。
       </p>
       <div class="vk-hero__actions">
-        <a class="vk-home-btn vk-home-btn--primary" href="/guide/getting-started">开始使用</a>
-        <a class="vk-home-btn vk-home-btn--ghost" href="/components/">浏览 28 个组件</a>
+        <a class="vk-home-btn vk-home-btn--primary" :href="withBase('/guide/getting-started')">
+          开始使用
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path
+              d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+        <a class="vk-home-btn vk-home-btn--ghost" :href="withBase('/components/')">
+          浏览 56 个组件
+        </a>
       </div>
       <div class="vk-hero__meta">
         <div class="vk-hero__meta-item">
-          <span class="vk-hero__meta-value">28</span>
+          <span class="vk-hero__meta-value">56</span>
           <span class="vk-hero__meta-label">可发布组件</span>
         </div>
         <div class="vk-hero__meta-item">

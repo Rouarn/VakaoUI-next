@@ -4,7 +4,7 @@ import { computed, ref } from 'vue'
 interface DemoBlockProps {
   /** demos 目录下的相对路径，例如 button/basic */
   name: string
-  /** 示例说明，显示在工具栏左侧 */
+  /** 示例说明，显示在卡片标题区 */
   title?: string
   /** 示例容器改为纵向排列 */
   stack?: boolean
@@ -46,14 +46,14 @@ async function copy(): Promise<void> {
 
 <template>
   <figure class="vk-demo">
-    <div :class="['vk-demo__preview', { 'vk-demo__preview--stack': stack }]">
-      <component :is="component" v-if="component" />
-    </div>
     <figcaption class="vk-demo__bar">
-      <span class="vk-demo__file">{{ title ?? `${name}.vue` }}</span>
+      <div class="vk-demo__meta">
+        <span class="vk-demo__title">{{ title ?? '交互示例' }}</span>
+        <code class="vk-demo__file">{{ name }}.vue</code>
+      </div>
       <span class="vk-demo__actions">
         <button v-if="source" type="button" class="vk-demo__btn" @click="copy">
-          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" stroke="currentColor" />
             <path d="M10.5 3.5h-6a1 1 0 0 0-1 1v6" stroke="currentColor" stroke-linecap="round" />
           </svg>
@@ -62,7 +62,7 @@ async function copy(): Promise<void> {
         <button
           v-if="source"
           type="button"
-          :class="['vk-demo__btn', { 'vk-demo__btn--open': open }]"
+          :class="['vk-demo__btn', 'vk-demo__btn--toggle', { 'vk-demo__btn--open': open }]"
           :aria-expanded="open"
           @click="open = !open"
         >
@@ -79,6 +79,17 @@ async function copy(): Promise<void> {
         </button>
       </span>
     </figcaption>
-    <pre v-if="open && source" class="vk-demo__code"><code>{{ source }}</code></pre>
+
+    <div :class="['vk-demo__preview', { 'vk-demo__preview--stack': stack }]">
+      <component :is="component" v-if="component" />
+    </div>
+
+    <div v-if="open && source" class="vk-demo__code">
+      <div class="vk-demo__code-head">
+        <span class="vk-demo__lang">Vue</span>
+        <span class="vk-demo__code-file">{{ name }}.vue</span>
+      </div>
+      <pre><code>{{ source }}</code></pre>
+    </div>
   </figure>
 </template>
